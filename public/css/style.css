@@ -16,3 +16,21 @@ td {
 .coinManipulatorButton {
   border: 2px solid lightgray;
 }
+
+.chineseTitle {
+  color: red;
+}
+
+.moneyTitle {
+  color: green;
+}
+
+.blank {
+  border: white;
+}
+
+.englishButton {
+  border: 2px solid black;
+  color: white;
+  background-color: white;
+}

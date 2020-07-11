@@ -1,0 +1,120 @@
+
+<head>
+  <meta charset="utf-8">
+  <title>Money Game</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <audio id="xyz" src="sounds/ka-ching.mp3" preload="auto"></audio>
+  <audio id="abc" src="sounds/wrong-answer-sound-effect.mp3" preload="auto"></audio>
+  <audio id="rollSound" src="https://www.myinstants.com/media/sounds/shake-and-roll-dice-soundbible.mp3" preload="auto"></audio>
+  <audio id="cheerSound" src="https://www.myinstants.com/media/sounds/kids_cheering.mp3" preload="auto"></audio>
+  <h1 class="debug moneyTitle">Money Game</h1>
+  <table>
+    <tr>
+    <td>
+  <table>
+    <tr><th>TOTAL</th></tr>
+    <tr>
+      <td id="total">
+        $0.00
+        </td>
+      </tr>
+
+  </table>
+  <table>
+    <td>
+      <img id="die1" class="die" src="images/die0.png" height="50" width="50">
+    </td>
+    <td>
+      <img id="die2" class="die" src="images/die0.png" height="50" width="50">
+    </td>
+  </table>
+  </td>
+  <td>
+    <table>
+        <td>
+          <img class="coin" src="images/penny-back.jpg" height="50" width="50">
+          </td>
+          <td>
+            <img class="coin" src="images/nickel-head.jpg" height="70" width="70">
+          </td>
+          <td>
+            <img class="coin" src="images/dime-head.png" height="40" width="40">
+          </td>
+          <td>
+            <img class="coin" src="images/quarter-head.png" height="90" width="90">
+          </td>
+          <td>
+            <img class="coin" src="images/dollar-front.jpg" height="80" width="150">
+          </td>
+        <tr>
+          <td>
+            <img id="pennyPic" src="images/p0.png">
+            </td>
+            <td>
+            <img id="nickelPic" src="images/n0.png">
+            </td>
+            <td>
+              <img id="dimePic" src="images/d0.png">
+            </td>
+            <td>
+              <img id="quarterPic" src="images/q0.png">
+            </td>
+            <td>
+              <img id="billPic" src="images/b0.png">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table>
+                <tr>
+                  <td class="coinManipulatorButton"><button id="subPenny" class="coinManipulator" disabled>-</button></td>
+                  <td class="coinManipulatorButton"><button id="addPenny" class="coinManipulator" disabled>+</button></td>
+                </tr>
+              </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td class="coinManipulatorButton"><button id="subNickel" class="coinManipulator" disabled>-</button></td>
+                    <td class="coinManipulatorButton"><button id="addNickel" class="coinManipulator" disabled>+</button></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td class="coinManipulatorButton"><button id="subDime" class="coinManipulator" disabled>-</button></td>
+                    <td class="coinManipulatorButton"><button id="addDime" class="coinManipulator" disabled>+</button></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td class="coinManipulatorButton"><button id="subQuarter" class="coinManipulator" disabled>-</button></td>
+                    <td class="coinManipulatorButton"><button id="addQuarter" class="coinManipulator" disabled>+</button></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table>
+                  <tr>
+                    <td class="coinManipulatorButton"><button id="subDollar" class="coinManipulator" disabled>-</button></td>
+                    <td class="coinManipulatorButton"><button id="addDollar" class="coinManipulator" disabled>+</button></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+    </table>
+  </td>
+  </tr>
+  <tr>
+    <td><button id="rollButton">ROLL</button></td>
+    <td><button id="submitButton" disabled>CALCULATE</button></td>
+  </tr>
+  </table>
+  <script src="js/index.js" charset="utf-8"></script>
+</body>

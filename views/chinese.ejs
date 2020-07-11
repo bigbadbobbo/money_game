@@ -1,0 +1,83 @@
+<head>
+  <meta charset="utf-8">
+  <title>Chinese Game</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+  <%
+    var x = Math.floor(Math.random()*11)
+    var chineseImg = "images/chinese"+x.toString()+".png"
+
+    function getNewWord(inArr)
+    {
+      var word = Math.floor(Math.random()*11)
+      while(inArr.includes(word) == true)
+      {
+        word = Math.floor(Math.random()*11)
+      }
+      return word
+    }
+
+    function scramble(array) {
+      array.sort(() => Math.random() - 0.5);
+    }
+
+    var ret = []
+    var gotAnswer = false
+    var num = Math.floor(Math.random()*11)
+    ret.push(num)
+  //  ret.push("images/english"+num.toString()+".png")
+    while(ret.length < 4)
+    {
+      var newWord = getNewWord(ret)
+      if(newWord == x)
+      {
+        gotAnswer = true
+      }
+      ret.push(newWord)
+//      ret.push("images/english"+newWord.toString()+".png")
+    }
+    if(gotAnswer == true)
+    {
+      var newWord = getNewWord(ret)
+      ret.push(newWord)
+//      ret.push("images/english"+newWord.toString()+".png")
+    }
+    else
+    {
+      ret.push(x)
+//      ret.push("images/english"+x.toString()+".png")
+    }
+
+    scramble(ret)
+
+  %>
+  <h1 class="chineseTitle debug">Chinese Game</h1>
+  <script type="text/javascript">
+    alert("You are building a robot. The instructions are in Chinese. Henry Hammer wants to destroy your robot. Translate the Chinese words and build the robot before Henry sabotages you.");
+  </script>
+  <table>
+    <tr>
+      <td class="blank"><img id="robotpic" src="images/robot0.png" height="100" width="60"></td>
+      <td class="blank"><img id="lamppic" class="coin" src="images/lamp0.png" height="100" width="60"></td>
+      <td class="blank"><img id="signpic" class="coin" src="images/sign0.png" height="120" width="80"></td>
+      <td class="blank"><img id="trashpic" class="coin" src="images/trash0.png" height="60" width="60"></td>
+      <td class="blank"><img id="hammerpic" class="coin" src="images/hammer0.png" height="100" width="60"></td>
+    </tr>
+    <tr><td class="blank"></td><td class="blank"></td>
+      <td>
+        <img id="tile" class="chinese" src="<%= chineseImg %>" height="100" width="60">
+        </td>
+        <td class="blank"></td><td class="blank"></td>
+    </tr>
+    <tr>
+      <td class="blank"><button id="e0" class="englishButton"><img id="ei0" src="images/english<%=ret[0]%>.png"></button></td>
+      <td class="blank"><button id="e1" class="englishButton"><img id="ei1" src="images/english<%=ret[1]%>.png"></button></td>
+      <td class="blank"><button id="e2" class="englishButton"><img id="ei2" src="images/english<%=ret[2]%>.png"></button></td>
+      <td class="blank"><button id="e3" class="englishButton"><img id="ei3" src="images/english<%=ret[3]%>.png"></button></td>
+      <td class="blank"><button id="e4" class="englishButton"><img id="ei4" src="images/english<%=ret[4]%>.png"></button></td>
+    </tr>
+  </table>
+  <script src="js/index.js" charset="utf-8"></script>
+</body>
